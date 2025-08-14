@@ -6,6 +6,6 @@ class TestMulti(unittest.TestCase):
         data=multi(2,3)
         assert data==6
 
-    def test_multi2(self):
+    def test_multi2_negative(self):
         data=multi(5,10)
         assert data==12
