@@ -1,4 +1,4 @@
-Testing:
+                Testing:
 1) Manuall testing
 2) Automation Testing 
     ==>two Frameworks
