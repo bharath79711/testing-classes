@@ -1,0 +1,58 @@
+
+
+
+====================
+Testcases
+===============
+1) To check the help message using --help command
+2) To check the help message using --h command
+3) To Check negitive scenioria by only passing few arguments
+4) To Check user validation by passing all arguments
+5) To Check uservalidations by passing invalid argument values
+6) Check if age is less than 18 passed
+
+
+Mannuall testing
+==========================
+1) To check the help message using --help command
+python uservalidations.py --help
+usage: uservalidations.py [-h] --username USERNAME --password PASSWORD --age AGE
+
+Taking user details
+
+options:
+options:
+  -h, --help           show this help message and exit
+  --username USERNAME  Username fo the Page
+  --password PASSWORD  Password for the page
+  --age AGE            age
+
+2)  To check the help message using --h command
+python uservalidations.py --h
+usage: uservalidations.py [-h] --username USERNAME --password PASSWORD --age AGE
+
+Taking user details
+
+options:
+  -h, --help           show this help message and exit
+  --username USERNAME  Username fo the Page
+  --password PASSWORD  Password for the page
+  --age AGE            age
+
+3) To Check negitive scenioria by only passing few arguments
+
+python uservalidations.py --username reddy
+usage: uservalidations.py [-h] --username USERNAME --password PASSWORD --age AGE
+uservalidations.py: error: the following arguments are required: --username, --password, --age
+
+4) To Check user validation by passing all arguments
+
+python uservalidations.py --username reddy --password btr --age 20
+thirumala is username
+reddy is password
+('thirumala', 'reddy', 40)
+
+5) To Check uservalidations by passing invalid argument values
+
+python uservalidations.py --username reddy --password btr --age data
+ValueError: invalid literal for int() with base 10: 'data'

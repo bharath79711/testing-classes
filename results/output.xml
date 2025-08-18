@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.10.11 on win32)" generated="2025-08-18T20:07:00.682805" rpa="false" schemaversion="5">
+<suite id="s1" name="Uservalidations" source="C:\PycharmProjects\bharath\testing-classes\tests\robot\uservalidations.robot">
+<test id="s1-t1" name="To check the help message using --help command" line="12">
+<kw name="File Should Exist" owner="OperatingSystem">
+<msg time="2025-08-18T20:07:00.740107" level="INFO" html="true">File '&lt;a href="file://C:\PycharmProjects\bharath\testing-classes\uservalidation.py"&gt;C:\PycharmProjects\bharath\testing-classes\uservalidation.py&lt;/a&gt;' exists.</msg>
+<arg>C:/PycharmProjects/bharath/testing-classes/uservalidation.py</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<status status="PASS" start="2025-08-18T20:07:00.739033" elapsed="0.001074"/>
+</kw>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-08-18T20:07:00.753822" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/uservalidation.py --help 2&gt;&amp;1'.</msg>
+<msg time="2025-08-18T20:07:00.894629" level="INFO">${result} = usage: uservalidation.py [-h] [-u USERNAME] [-p PASSWORD] [-a AGE]
+
+User validation
+
+options:
+  -h, --help            show this help message and exit
+  -u USERNAME, --username USERNAME
+               ...</msg>
+<var>${result}</var>
+<arg>${command} --help</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-08-18T20:07:00.740107" elapsed="0.154522"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>usage: uservalidation.py [-h] [-u USERNAME] [-p PASSWORD] [-a AGE]</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:00.894629" elapsed="0.001092"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>User validation</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:00.895721" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>-h, --help</arg>
+<arg>show this help message and exit</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:00.896730" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>-a AGE, --age AGE</arg>
+<arg>age</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:00.896730" elapsed="0.000000"/>
+</kw>
+<doc>To check the help related commands in console</doc>
+<tag>user</tag>
+<status status="PASS" start="2025-08-18T20:07:00.737944" elapsed="0.158786"/>
+</test>
+<test id="s1-t2" name="To check the help message using --h command" line="24">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-08-18T20:07:00.912247" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/uservalidation.py --h 2&gt;&amp;1'.</msg>
+<msg time="2025-08-18T20:07:01.047788" level="INFO">${result} = usage: uservalidation.py [-h] [-u USERNAME] [-p PASSWORD] [-a AGE]
+
+User validation
+
+options:
+  -h, --help            show this help message and exit
+  -u USERNAME, --username USERNAME
+               ...</msg>
+<var>${result}</var>
+<arg>${command} --h</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-08-18T20:07:00.899271" elapsed="0.148517"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>usage: uservalidation.py [-h] [-u USERNAME] [-p PASSWORD] [-a AGE]</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.047788" elapsed="0.000506"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>User validation</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.048515" elapsed="0.000351"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>-h, --help</arg>
+<arg>show this help message and exit</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.048866" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>-a AGE, --age AGE</arg>
+<arg>age</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.048866" elapsed="0.000000"/>
+</kw>
+<doc>To check the help related commands in console</doc>
+<tag>user</tag>
+<status status="PASS" start="2025-08-18T20:07:00.898237" elapsed="0.151685"/>
+</test>
+<test id="s1-t3" name="To Check negitive way by passing few arguments" line="36">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-08-18T20:07:01.058241" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/uservalidation.py --username 2&gt;&amp;1'.</msg>
+<msg time="2025-08-18T20:07:01.214088" level="INFO">${result} = usage: uservalidation.py [-h] [-u USERNAME] [-p PASSWORD] [-a AGE]
+uservalidation.py: error: argument -u/--username: expected one argument</msg>
+<var>${result}</var>
+<arg>${command} --username</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.049922" elapsed="0.164166"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>usage: uservalidation.py [-h] [-u USERNAME] [-p PASSWORD] [-a AGE]</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.215097" elapsed="0.002978"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>uservalidation.py: error: argument -u/--username: expected one argument</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.219137" elapsed="0.000977"/>
+</kw>
+<doc>To check negitive way by passing few arguments</doc>
+<tag>user</tag>
+<status status="PASS" start="2025-08-18T20:07:01.049922" elapsed="0.171190"/>
+</test>
+<test id="s1-t4" name="To Check user validation by passing all argument" line="44">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-08-18T20:07:01.240318" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/uservalidation.py --username reddy --password btr --age 20 2&gt;&amp;1'.</msg>
+<msg time="2025-08-18T20:07:01.397918" level="INFO">${result} = logged to the server
+reddy is username
+btr is password
+20 is age
+('reddy', 'btr', 40)</msg>
+<var>${result}</var>
+<arg>${command} --username reddy --password btr --age 20</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.225572" elapsed="0.172346"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>logged to the server</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.399092" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>reddy is usernam</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.400091" elapsed="0.001149"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>btr is password</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.401240" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>20 is age</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.402395" elapsed="0.000508"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>('reddy', 'btr', 40)</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.404480" elapsed="0.001549"/>
+</kw>
+<doc>To check passing all arguments</doc>
+<tag>user</tag>
+<status status="PASS" start="2025-08-18T20:07:01.223093" elapsed="0.182936"/>
+</test>
+<test id="s1-t5" name="To Check uservalidations by passing invalid argument values" line="55">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-08-18T20:07:01.429227" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/uservalidation.py --username reddy --password btr --age btr 2&gt;&amp;1'.</msg>
+<msg time="2025-08-18T20:07:01.580163" level="INFO">${result} = Traceback (most recent call last):
+  File "C:\PycharmProjects\bharath\testing-classes\uservalidation.py", line 23, in &lt;module&gt;
+    print(func(args.username,args.password,args.age))
+  File "C:\PycharmP...</msg>
+<var>${result}</var>
+<arg>${command} --username reddy --password btr --age btr</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.413690" elapsed="0.166473"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>ValueError</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.580163" elapsed="0.000000"/>
+</kw>
+<doc>To invalid arguments</doc>
+<tag>user</tag>
+<status status="PASS" start="2025-08-18T20:07:01.412154" elapsed="0.168009"/>
+</test>
+<test id="s1-t6" name="To Check uservalidations by passing less age" line="62">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-08-18T20:07:01.600795" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/uservalidation.py --username reddy --password btr --age 12 2&gt;&amp;1'.</msg>
+<msg time="2025-08-18T20:07:01.759431" level="INFO">${result} = check the age above 18</msg>
+<var>${result}</var>
+<arg>${command} --username reddy --password btr --age 12</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.582427" elapsed="0.177004"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>check the age above 18</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-18T20:07:01.759431" elapsed="0.000000"/>
+</kw>
+<doc>To less age</doc>
+<tag>user</tag>
+<status status="PASS" start="2025-08-18T20:07:01.581379" elapsed="0.179438"/>
+</test>
+<status status="PASS" start="2025-08-18T20:07:00.690393" elapsed="1.070424"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="6" fail="0" skip="0">user</stat>
+</tag>
+<suite>
+<stat name="Uservalidations" id="s1" pass="6" fail="0" skip="0">Uservalidations</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
