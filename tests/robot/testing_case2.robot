@@ -8,26 +8,15 @@ ${age}    29
 ${village}    chintakunta
 ${Number}    9010297520
 ${Pin_code}    516172
+@{fruits}    apple banana orange mango dragonfruit kiwi
+&{user}    Name=Bharath    age=29    city=Bangalore    course=python
+
 
 *** Test Cases ***
 welcome
   [Tags]    bharath
    inviting
    Log    test case one done
-
-
-*** Keywords ***
-inviting
-  log    Hello!${Name}
-  Log    age :${age}
-  log    village:${village}
-  Log    mob_no:${Number}
-  log    pin code:${Pin_code}
-
-*** Variables ***
-@{fruits}    apple banana orange mango dragonfruit kiwi
-
-*** Test Cases ***
 print fruits
   [Tags]    Bharath    anu
   Log To Console  \nmy favourite fruits
@@ -35,10 +24,6 @@ print fruits
         Log To Console   ${fruit}
   END
 
-*** Variables ***
-&{user}    Name=Bharath    age=29    city=Bangalore    course=python
-
-*** Test Cases ***
 user details
   [Tags]    Bharath
   Log    Name:${user.Name}
@@ -46,8 +31,6 @@ user details
   Log    city:${user.city}
   Log    course:${user.course}
 
-
-*** Test Cases ***
 add numbers test
   [Tags]    anu
   ${result}=    add two numbers    10    20
@@ -74,6 +57,13 @@ multiplication test
 
 
 *** Keywords ***
+inviting
+  log    Hello!${Name}
+  Log    age :${age}
+  log    village:${village}
+  Log    mob_no:${Number}
+  log    pin code:${Pin_code}
+
 add two numbers
    [Arguments]    ${x}    ${y}
    ${sum}=    Evaluate    ${x} + ${y}
@@ -95,14 +85,3 @@ product
   [Arguments]    ${x}    ${y}
   ${mul}=    Evaluate    ${x} * ${y}
   RETURN    ${mul}
-
-
-
-
-
-
-
-
-
-
-

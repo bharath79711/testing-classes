@@ -1,5 +1,5 @@
 import unittest
-from unit_test_mult import *
+from tests.unit.unit_test_mult import *
 
 class test_concepts(unittest.TestCase):
     def test_add(self):
