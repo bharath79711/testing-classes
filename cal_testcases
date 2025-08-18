@@ -1,0 +1,103 @@
+====***Test Cases***====
+
+1) To check the help message using --help command
+2) To check the help message using --h command
+3) To check  addition calucation by passing possitive numbers
+4) To check  addition calucation by passing Negative numbers
+5) To check  subtraction calucation by passing possitive numbers
+6) To check  subtraction calucation by passing Negative numbers
+7) To check  Multiply calucation by passing possitive numbers
+8) To check  Multiply calucation by passing negative numbers
+9) To check  Multiply calucation by passing one negative and one possitive number
+10) To check  Divison calucation by passing possitive numbers
+11)To check  Division calucation by passing negative numbers
+12)To check  Division calucation by passing zero number
+
+
+***** Manual testing *****
+
+1.To check the help message using --help command
+
+ python .\calculator.py --help
+usage: calculator.py [-h] [--operation {add,subtract,multiply,divide}] num1 num2
+
+Simple command-line calculator
+
+positional arguments:
+  num1                  First number
+  num2                  Second number
+
+options:
+  -h, --help            show this help message and exit
+  --operation {add,subtract,multiply,divide}
+                        Operation to perform (default: add)
+
+
+2.To check the help message using --h command
+
+ python .\calculator.py --h
+usage: calculator.py [-h] [--operation {add,subtract,multiply,divide}] num1 num2
+
+Simple command-line calculator
+
+positional arguments:
+  num1                  First number
+  num2                  Second number
+
+options:
+  -h, --help            show this help message and exit
+  --operation {add,subtract,multiply,divide}
+                        Operation to perform (default: add)
+
+
+3. To check  addition calucation by passing possitive numbers
+
+   python .\calculator.py --operation add 25 25
+   Result: 50.0
+
+4. To check  addition calucation by passing Negative numbers
+
+    python .\calculator.py --operation add -10 -12
+    Result: -22.0
+
+5.To check  subtraction calucation by passing possitive numbers
+
+   python .\calculator.py --operation subtract 24 12
+   Result: 12.0
+
+6.To check  subtraction calucation by passing Negative numbers
+
+    python .\calculator.py --operation subtract -24 -12
+    Result: -12.0
+
+7. To check  Multiply calucation by passing possitive numbers
+
+        python .\calculator.py --operation multiply 19 2
+        Result: 38.0
+
+8.  To check  Multiply calucation by passing negative numbers
+
+          python .\calculator.py --operation multiply -11 -2
+          Result: 22.0
+
+9.  To check  Multiply calucation by passing one possitivi and one negative number
+
+         python .\calculator.py --operation multiply -11 2
+         Result: -22.0
+
+10.To check  Divison calucation by passing possitive numbers
+        python .\calculator.py --operation divide 30 15
+        Result: 2.0
+
+11.To check  Division calucation by passing negative numbers
+         python .\calculator.py --operation divide -12 -10
+         Result: 1.2
+
+12.To check  Division calucation by passing zero number
+        python .\calculator.py --operation divide 12 0
+        Error: Division by zero
+
+13.To check more than one oprations at a time
+       python .\calculator.py --operation add 12 10 --operation subtract 10 5
+       usage: calculator.py [-h] [--operation {add,subtract,multiply,divide}] num1 num2
+       calculator.py: error: unrecognized arguments: 10 5
