@@ -1,0 +1,60 @@
+**** Test cases****
+
+------------manual testing---------------
+
+1.To check the help message using --help command
+
+python .\sentence_dict_count.py --help
+
+usage: sentence_dict_count.py [-h] [--sentence SENTENCE]
+
+count the characters in a sentence
+
+options:
+  -h, --help           show this help message and exit
+  --sentence SENTENCE  Enter a sentence
+
+2.To check possitive scenario by passing --sentence
+
+ python .\sentence_dict_count.py --sentence " python is good laguage to learn"
+char p : 1
+char y : 1
+char t : 2
+char h : 1
+char o : 4
+char n : 2
+char i : 1
+char s : 1
+char g : 3
+char d : 1
+char l : 2
+char a : 3
+char u : 1
+char e : 2
+char r : 1
+
+3.To check passing by numbers --sentence 123 123 456 789
+
+ python .\sentence_dict_count.py --sentence "123 123 456 789"
+char 1 : 2
+char 2 : 2
+char 3 : 2
+char 4 : 1
+char 5 : 1
+char 6 : 1
+char 7 : 1
+char 8 : 1
+char 9 : 1
+
+
+4. To check without passing any  --sentence
+
+ python .\sentence_dict_count.py --sentence
+usage: sentence_dict_count.py [-h] [--sentence SENTENCE]
+sentence_dict_count.py: error: argument --sentence: expected one argument
+
+5.To check without mention sentence in quation --sentence python is good
+
+ python .\sentence_dict_count.py --sentence python is good
+usage: sentence_dict_count.py [-h] [--sentence SENTENCE]
+sentence_dict_count.py: error: unrecognized arguments: is good

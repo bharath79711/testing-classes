@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.10.11 on win32)" generated="2025-08-22T18:14:37.379796" rpa="false" schemaversion="5">
+<suite id="s1" name="Word Count" source="C:\PycharmProjects\bharath\testing-classes\tests\robot\word_count.robot">
+<test id="s1-t1" name="To check by using help command" line="17">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-08-22T18:14:37.549736" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/word_count.py --help 2&gt;&amp;1'.</msg>
+<msg time="2025-08-22T18:14:37.634363" level="INFO">${result} = usage: word_count.py [-h] [--sentence SENTENCE]
+
+count of words in sentence
+
+options:
+  -h, --help           show this help message and exit
+  --sentence SENTENCE  Enter a sentence</msg>
+<var>${result}</var>
+<arg>${command} --help</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-08-22T18:14:37.539697" elapsed="0.094666"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>usage: word_count.py [-h] [--sentence SENTENCE]</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-22T18:14:37.634363" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>count of words in sentence</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-22T18:14:37.634363" elapsed="0.000000"/>
+</kw>
+<doc>to check by using --help command</doc>
+<tag>count</tag>
+<status status="PASS" start="2025-08-22T18:14:37.529837" elapsed="0.104526"/>
+</test>
+<test id="s1-t2" name="To check by using sentence without quatation marks" line="27">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-08-22T18:14:37.658779" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/word_count.py --sentence python is high level programming language 2&gt;&amp;1'.</msg>
+<msg time="2025-08-22T18:14:37.736719" level="INFO">${result} = usage: word_count.py [-h] [--sentence SENTENCE]
+word_count.py: error: unrecognized arguments: is high level programming language</msg>
+<var>${result}</var>
+<arg>${command} --sentence python is high level programming language</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-08-22T18:14:37.650217" elapsed="0.086502"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>usage: word_count.py [-h] [--sentence SENTENCE]</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-22T18:14:37.736719" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>word_count.py: error: unrecognized arguments: is high level programming language</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-22T18:14:37.736719" elapsed="0.000000"/>
+</kw>
+<doc>To taking sentence without quatation marks</doc>
+<tag>count</tag>
+<status status="PASS" start="2025-08-22T18:14:37.634363" elapsed="0.102356"/>
+</test>
+<test id="s1-t3" name="To check possitive scenario by passing sentence" line="36">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-08-22T18:14:37.756749" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/word_count.py --sentence "python is high level programming language" 2&gt;&amp;1'.</msg>
+<msg time="2025-08-22T18:14:37.840119" level="INFO">${result} = word: python
+word: is
+word: high
+word: level
+word: programming
+word: language
+total words: 6</msg>
+<var>${result}</var>
+<arg>${command} --sentence "python is high level programming language"</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-08-22T18:14:37.736719" elapsed="0.103400"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>word: python</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-22T18:14:37.840119" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>total words: 6</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-22T18:14:37.840119" elapsed="0.000000"/>
+</kw>
+<doc>To check by using sentence</doc>
+<tag>count</tag>
+<status status="PASS" start="2025-08-22T18:14:37.736719" elapsed="0.103400"/>
+</test>
+<test id="s1-t4" name="To check by without passing any sentence" line="46">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-08-22T18:14:37.848955" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/word_count.py --sentence 2&gt;&amp;1'.</msg>
+<msg time="2025-08-22T18:14:37.932867" level="INFO">${result} = usage: word_count.py [-h] [--sentence SENTENCE]
+word_count.py: error: argument --sentence: expected one argument</msg>
+<var>${result}</var>
+<arg>${command} --sentence</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-08-22T18:14:37.840119" elapsed="0.092748"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>usage: word_count.py [-h] [--sentence SENTENCE]</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-22T18:14:37.932867" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>word_count.py: error: argument --sentence: expected one argument</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-22T18:14:37.932867" elapsed="0.000000"/>
+</kw>
+<doc>To check by without passing sentence</doc>
+<tag>count</tag>
+<status status="PASS" start="2025-08-22T18:14:37.840119" elapsed="0.092748"/>
+</test>
+<test id="s1-t5" name="To check by passing numbers in place of sentence" line="56">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-08-22T18:14:37.945236" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/word_count.py --sentence "12 122 122 1222 12 122 122 12" 2&gt;&amp;1'.</msg>
+<msg time="2025-08-22T18:14:38.027685" level="INFO">${result} = word: 12
+word: 122
+word: 122
+word: 1222
+word: 12
+word: 122
+word: 122
+word: 12
+total words: 8</msg>
+<var>${result}</var>
+<arg>${command} --sentence "12 122 122 1222 12 122 122 12"</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-08-22T18:14:37.937634" elapsed="0.090051"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>word: 12</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-22T18:14:38.027685" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>total words: 8</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-22T18:14:38.027685" elapsed="0.000000"/>
+</kw>
+<doc>to check by passing numbers in place of sentence</doc>
+<tag>count</tag>
+<status status="PASS" start="2025-08-22T18:14:37.932867" elapsed="0.094818"/>
+</test>
+<status status="PASS" start="2025-08-22T18:14:37.381803" elapsed="0.645882"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="0" skip="0">count</stat>
+</tag>
+<suite>
+<stat name="Word Count" id="s1" pass="5" fail="0" skip="0">Word Count</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

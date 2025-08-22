@@ -1,229 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.10.11 on win32)" generated="2025-08-18T20:07:00.682805" rpa="false" schemaversion="5">
-<suite id="s1" name="Uservalidations" source="C:\PycharmProjects\bharath\testing-classes\tests\robot\uservalidations.robot">
-<test id="s1-t1" name="To check the help message using --help command" line="12">
-<kw name="File Should Exist" owner="OperatingSystem">
-<msg time="2025-08-18T20:07:00.740107" level="INFO" html="true">File '&lt;a href="file://C:\PycharmProjects\bharath\testing-classes\uservalidation.py"&gt;C:\PycharmProjects\bharath\testing-classes\uservalidation.py&lt;/a&gt;' exists.</msg>
-<arg>C:/PycharmProjects/bharath/testing-classes/uservalidation.py</arg>
-<doc>Fails unless the given ``path`` points to an existing file.</doc>
-<status status="PASS" start="2025-08-18T20:07:00.739033" elapsed="0.001074"/>
-</kw>
+<robot generator="Robot 7.3.2 (Python 3.10.11 on win32)" generated="2025-08-22T18:18:11.397049" rpa="false" schemaversion="5">
+<suite id="s1" name="Testing-Classes" source="C:\PycharmProjects\bharath\testing-classes">
+<suite id="s1-s1" name="Tests" source="C:\PycharmProjects\bharath\testing-classes\tests">
+<suite id="s1-s1-s1" name="Robot" source="C:\PycharmProjects\bharath\testing-classes\tests\robot">
+<suite id="s1-s1-s1-s1" name="Word Count" source="C:\PycharmProjects\bharath\testing-classes\tests\robot\word_count.robot">
+<test id="s1-s1-s1-s1-t1" name="To check by using help command" line="17">
 <kw name="Run" owner="OperatingSystem">
-<msg time="2025-08-18T20:07:00.753822" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/uservalidation.py --help 2&gt;&amp;1'.</msg>
-<msg time="2025-08-18T20:07:00.894629" level="INFO">${result} = usage: uservalidation.py [-h] [-u USERNAME] [-p PASSWORD] [-a AGE]
+<msg time="2025-08-22T18:18:11.599325" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/word_count.py --help 2&gt;&amp;1'.</msg>
+<msg time="2025-08-22T18:18:11.676952" level="INFO">${result} = usage: word_count.py [-h] [--sentence SENTENCE]
 
-User validation
+count of words in sentence
 
 options:
-  -h, --help            show this help message and exit
-  -u USERNAME, --username USERNAME
-               ...</msg>
+  -h, --help           show this help message and exit
+  --sentence SENTENCE  Enter a sentence</msg>
 <var>${result}</var>
 <arg>${command} --help</arg>
 <doc>Runs the given command in the system and returns the output.</doc>
-<status status="PASS" start="2025-08-18T20:07:00.740107" elapsed="0.154522"/>
+<status status="PASS" start="2025-08-22T18:18:11.589816" elapsed="0.087136"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${result}</arg>
-<arg>usage: uservalidation.py [-h] [-u USERNAME] [-p PASSWORD] [-a AGE]</arg>
+<arg>usage: word_count.py [-h] [--sentence SENTENCE]</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:00.894629" elapsed="0.001092"/>
+<status status="PASS" start="2025-08-22T18:18:11.677951" elapsed="0.000997"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${result}</arg>
-<arg>User validation</arg>
+<arg>count of words in sentence</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:00.895721" elapsed="0.000000"/>
+<status status="PASS" start="2025-08-22T18:18:11.678948" elapsed="0.000000"/>
 </kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${result}</arg>
-<arg>-h, --help</arg>
-<arg>show this help message and exit</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:00.896730" elapsed="0.000000"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${result}</arg>
-<arg>-a AGE, --age AGE</arg>
-<arg>age</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:00.896730" elapsed="0.000000"/>
-</kw>
-<doc>To check the help related commands in console</doc>
-<tag>user</tag>
-<status status="PASS" start="2025-08-18T20:07:00.737944" elapsed="0.158786"/>
+<doc>to check by using --help command</doc>
+<tag>count</tag>
+<status status="PASS" start="2025-08-22T18:18:11.587387" elapsed="0.092557"/>
 </test>
-<test id="s1-t2" name="To check the help message using --h command" line="24">
+<test id="s1-s1-s1-s1-t2" name="To check by using sentence without quatation marks" line="27">
 <kw name="Run" owner="OperatingSystem">
-<msg time="2025-08-18T20:07:00.912247" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/uservalidation.py --h 2&gt;&amp;1'.</msg>
-<msg time="2025-08-18T20:07:01.047788" level="INFO">${result} = usage: uservalidation.py [-h] [-u USERNAME] [-p PASSWORD] [-a AGE]
-
-User validation
-
-options:
-  -h, --help            show this help message and exit
-  -u USERNAME, --username USERNAME
-               ...</msg>
+<msg time="2025-08-22T18:18:11.692909" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/word_count.py --sentence python is high level programming language 2&gt;&amp;1'.</msg>
+<msg time="2025-08-22T18:18:11.768542" level="INFO">${result} = usage: word_count.py [-h] [--sentence SENTENCE]
+word_count.py: error: unrecognized arguments: is high level programming language</msg>
 <var>${result}</var>
-<arg>${command} --h</arg>
+<arg>${command} --sentence python is high level programming language</arg>
 <doc>Runs the given command in the system and returns the output.</doc>
-<status status="PASS" start="2025-08-18T20:07:00.899271" elapsed="0.148517"/>
+<status status="PASS" start="2025-08-22T18:18:11.684933" elapsed="0.084113"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${result}</arg>
-<arg>usage: uservalidation.py [-h] [-u USERNAME] [-p PASSWORD] [-a AGE]</arg>
+<arg>usage: word_count.py [-h] [--sentence SENTENCE]</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.047788" elapsed="0.000506"/>
+<status status="PASS" start="2025-08-22T18:18:11.769046" elapsed="0.001116"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${result}</arg>
-<arg>User validation</arg>
+<arg>word_count.py: error: unrecognized arguments: is high level programming language</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.048515" elapsed="0.000351"/>
+<status status="PASS" start="2025-08-22T18:18:11.770162" elapsed="0.000000"/>
 </kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${result}</arg>
-<arg>-h, --help</arg>
-<arg>show this help message and exit</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.048866" elapsed="0.000000"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${result}</arg>
-<arg>-a AGE, --age AGE</arg>
-<arg>age</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.048866" elapsed="0.000000"/>
-</kw>
-<doc>To check the help related commands in console</doc>
-<tag>user</tag>
-<status status="PASS" start="2025-08-18T20:07:00.898237" elapsed="0.151685"/>
+<doc>To taking sentence without quatation marks</doc>
+<tag>count</tag>
+<status status="PASS" start="2025-08-22T18:18:11.681939" elapsed="0.088223"/>
 </test>
-<test id="s1-t3" name="To Check negitive way by passing few arguments" line="36">
+<test id="s1-s1-s1-s1-t3" name="To check possitive scenario by passing sentence" line="36">
 <kw name="Run" owner="OperatingSystem">
-<msg time="2025-08-18T20:07:01.058241" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/uservalidation.py --username 2&gt;&amp;1'.</msg>
-<msg time="2025-08-18T20:07:01.214088" level="INFO">${result} = usage: uservalidation.py [-h] [-u USERNAME] [-p PASSWORD] [-a AGE]
-uservalidation.py: error: argument -u/--username: expected one argument</msg>
+<msg time="2025-08-22T18:18:11.783665" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/word_count.py --sentence "python is high level programming language" 2&gt;&amp;1'.</msg>
+<msg time="2025-08-22T18:18:11.862335" level="INFO">${result} = word: python
+word: is
+word: high
+word: level
+word: programming
+word: language
+total words: 6</msg>
 <var>${result}</var>
-<arg>${command} --username</arg>
+<arg>${command} --sentence "python is high level programming language"</arg>
 <doc>Runs the given command in the system and returns the output.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.049922" elapsed="0.164166"/>
+<status status="PASS" start="2025-08-22T18:18:11.774651" elapsed="0.087684"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${result}</arg>
-<arg>usage: uservalidation.py [-h] [-u USERNAME] [-p PASSWORD] [-a AGE]</arg>
+<arg>word: python</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.215097" elapsed="0.002978"/>
+<status status="PASS" start="2025-08-22T18:18:11.862335" elapsed="0.001326"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${result}</arg>
-<arg>uservalidation.py: error: argument -u/--username: expected one argument</arg>
+<arg>total words: 6</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.219137" elapsed="0.000977"/>
+<status status="PASS" start="2025-08-22T18:18:11.863661" elapsed="0.000000"/>
 </kw>
-<doc>To check negitive way by passing few arguments</doc>
-<tag>user</tag>
-<status status="PASS" start="2025-08-18T20:07:01.049922" elapsed="0.171190"/>
+<doc>To check by using sentence</doc>
+<tag>count</tag>
+<status status="PASS" start="2025-08-22T18:18:11.772236" elapsed="0.092425"/>
 </test>
-<test id="s1-t4" name="To Check user validation by passing all argument" line="44">
+<test id="s1-s1-s1-s1-t4" name="To check by without passing any sentence" line="46">
 <kw name="Run" owner="OperatingSystem">
-<msg time="2025-08-18T20:07:01.240318" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/uservalidation.py --username reddy --password btr --age 20 2&gt;&amp;1'.</msg>
-<msg time="2025-08-18T20:07:01.397918" level="INFO">${result} = logged to the server
-reddy is username
-btr is password
-20 is age
-('reddy', 'btr', 40)</msg>
+<msg time="2025-08-22T18:18:11.875785" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/word_count.py --sentence 2&gt;&amp;1'.</msg>
+<msg time="2025-08-22T18:18:11.951815" level="INFO">${result} = usage: word_count.py [-h] [--sentence SENTENCE]
+word_count.py: error: argument --sentence: expected one argument</msg>
 <var>${result}</var>
-<arg>${command} --username reddy --password btr --age 20</arg>
+<arg>${command} --sentence</arg>
 <doc>Runs the given command in the system and returns the output.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.225572" elapsed="0.172346"/>
+<status status="PASS" start="2025-08-22T18:18:11.868910" elapsed="0.082905"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${result}</arg>
-<arg>logged to the server</arg>
+<arg>usage: word_count.py [-h] [--sentence SENTENCE]</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.399092" elapsed="0.000000"/>
+<status status="PASS" start="2025-08-22T18:18:11.951815" elapsed="0.001005"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${result}</arg>
-<arg>reddy is usernam</arg>
+<arg>word_count.py: error: argument --sentence: expected one argument</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.400091" elapsed="0.001149"/>
+<status status="PASS" start="2025-08-22T18:18:11.952820" elapsed="0.001055"/>
 </kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${result}</arg>
-<arg>btr is password</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.401240" elapsed="0.000000"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${result}</arg>
-<arg>20 is age</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.402395" elapsed="0.000508"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${result}</arg>
-<arg>('reddy', 'btr', 40)</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.404480" elapsed="0.001549"/>
-</kw>
-<doc>To check passing all arguments</doc>
-<tag>user</tag>
-<status status="PASS" start="2025-08-18T20:07:01.223093" elapsed="0.182936"/>
+<doc>To check by without passing sentence</doc>
+<tag>count</tag>
+<status status="PASS" start="2025-08-22T18:18:11.866554" elapsed="0.087321"/>
 </test>
-<test id="s1-t5" name="To Check uservalidations by passing invalid argument values" line="55">
+<test id="s1-s1-s1-s1-t5" name="To check by passing numbers in place of sentence" line="56">
 <kw name="Run" owner="OperatingSystem">
-<msg time="2025-08-18T20:07:01.429227" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/uservalidation.py --username reddy --password btr --age btr 2&gt;&amp;1'.</msg>
-<msg time="2025-08-18T20:07:01.580163" level="INFO">${result} = Traceback (most recent call last):
-  File "C:\PycharmProjects\bharath\testing-classes\uservalidation.py", line 23, in &lt;module&gt;
-    print(func(args.username,args.password,args.age))
-  File "C:\PycharmP...</msg>
+<msg time="2025-08-22T18:18:11.965881" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/word_count.py --sentence "12 122 122 1222 12 122 122 12" 2&gt;&amp;1'.</msg>
+<msg time="2025-08-22T18:18:12.035349" level="INFO">${result} = word: 12
+word: 122
+word: 122
+word: 1222
+word: 12
+word: 122
+word: 122
+word: 12
+total words: 8</msg>
 <var>${result}</var>
-<arg>${command} --username reddy --password btr --age btr</arg>
+<arg>${command} --sentence "12 122 122 1222 12 122 122 12"</arg>
 <doc>Runs the given command in the system and returns the output.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.413690" elapsed="0.166473"/>
+<status status="PASS" start="2025-08-22T18:18:11.958228" elapsed="0.077121"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${result}</arg>
-<arg>ValueError</arg>
+<arg>word: 12</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.580163" elapsed="0.000000"/>
-</kw>
-<doc>To invalid arguments</doc>
-<tag>user</tag>
-<status status="PASS" start="2025-08-18T20:07:01.412154" elapsed="0.168009"/>
-</test>
-<test id="s1-t6" name="To Check uservalidations by passing less age" line="62">
-<kw name="Run" owner="OperatingSystem">
-<msg time="2025-08-18T20:07:01.600795" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/uservalidation.py --username reddy --password btr --age 12 2&gt;&amp;1'.</msg>
-<msg time="2025-08-18T20:07:01.759431" level="INFO">${result} = check the age above 18</msg>
-<var>${result}</var>
-<arg>${command} --username reddy --password btr --age 12</arg>
-<doc>Runs the given command in the system and returns the output.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.582427" elapsed="0.177004"/>
+<status status="PASS" start="2025-08-22T18:18:12.035349" elapsed="0.001072"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${result}</arg>
-<arg>check the age above 18</arg>
+<arg>total words: 8</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-08-18T20:07:01.759431" elapsed="0.000000"/>
+<status status="PASS" start="2025-08-22T18:18:12.036421" elapsed="0.000000"/>
 </kw>
-<doc>To less age</doc>
-<tag>user</tag>
-<status status="PASS" start="2025-08-18T20:07:01.581379" elapsed="0.179438"/>
+<doc>to check by passing numbers in place of sentence</doc>
+<tag>count</tag>
+<status status="PASS" start="2025-08-22T18:18:11.955910" elapsed="0.080511"/>
 </test>
-<status status="PASS" start="2025-08-18T20:07:00.690393" elapsed="1.070424"/>
+<status status="PASS" start="2025-08-22T18:18:11.441586" elapsed="0.597439"/>
+</suite>
+<status status="PASS" start="2025-08-22T18:18:11.436815" elapsed="0.604961"/>
+</suite>
+<status status="PASS" start="2025-08-22T18:18:11.433716" elapsed="0.610126"/>
+</suite>
+<status status="PASS" start="2025-08-22T18:18:11.403279" elapsed="0.641568"/>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="0" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="6" fail="0" skip="0">user</stat>
+<stat pass="5" fail="0" skip="0">count</stat>
 </tag>
 <suite>
-<stat name="Uservalidations" id="s1" pass="6" fail="0" skip="0">Uservalidations</stat>
+<stat name="Testing-Classes" id="s1" pass="5" fail="0" skip="0">Testing-Classes</stat>
+<stat name="Tests" id="s1-s1" pass="5" fail="0" skip="0">Testing-Classes.Tests</stat>
+<stat name="Robot" id="s1-s1-s1" pass="5" fail="0" skip="0">Testing-Classes.Tests.Robot</stat>
+<stat name="Word Count" id="s1-s1-s1-s1" pass="5" fail="0" skip="0">Testing-Classes.Tests.Robot.Word Count</stat>
 </suite>
 </statistics>
 <errors>

@@ -10,7 +10,7 @@ ${command}    python     C:/PycharmProjects/bharath/testing-classes/calculator.p
 To check the help message using --help command
     [Documentation]    To check the help related commands in console
     [Tags]    calculations
-    File Should Exist    C:/PycharmProjects/bharath/testing-classes/calculator.py
+     File Should Exist    C:/PycharmProjects/bharath/testing-classes/calculator.py
 
      ${result}=    Run    ${command} --help
 

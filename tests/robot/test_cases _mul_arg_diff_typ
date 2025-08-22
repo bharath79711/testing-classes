@@ -1,0 +1,61 @@
+**** Test cases****
+
+------------manual testing---------------
+
+1.To check the help message using --help command
+
+python .\mul_arg_diff_typ.py --help
+
+    usage: mul_arg_diff_typ.py [-h] [--name NAME] [--village VILLAGE] [--city CITY] [--age AGE] [--marks MARKS]
+
+different types of arguments
+
+options:
+  -h, --help         show this help message and exit
+  --name NAME        Enter a name
+  --village VILLAGE  Enter a village name
+  --city CITY        Enter a city name
+  --age AGE          Enter your age
+  --marks MARKS      Enter your Marks
+
+
+2.To check possitive scenario  by passing all arguments
+
+
+python .\mul_arg_diff_typ.py --name Bharath --village chintakunta --city Bangalore --age 18 --marks 90
+
+name: Bharath
+village: chintakunta
+city: Bangalore
+age: 18
+first class
+
+3.To check by using few arguments
+
+python .\mul_arg_diff_typ.py --name Bharath --village chintakunta
+
+name: Bharath
+village: chintakunta
+city: None
+Traceback (most recent call last):
+  File "C:\PycharmProjects\bharath\testing-classes\mul_arg_diff_typ.py", line 15, in <module>
+    if args.age >= 18:
+TypeError: '>=' not supported between instances of 'NoneType' and 'int'
+
+
+4.To check by using age is less than 18
+
+python .\mul_arg_diff_typ.py --name Bharath --village chintakunta --age 15 --marks 85
+
+name: Bharath
+village: chintakunta
+city: None
+age can't be less than 18
+first class
+
+5.To check  by taking age in form of string
+
+python .\mul_arg_diff_typ.py --name Bharath --village chintakunta --age bk --marks 85
+
+usage: mul_arg_diff_typ.py [-h] [--name NAME] [--village VILLAGE] [--city CITY] [--age AGE] [--marks MARKS]
+mul_arg_diff_typ.py: error: argument --age: invalid int value: 'bk'

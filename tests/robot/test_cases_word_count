@@ -1,0 +1,52 @@
+**** Test cases****
+
+------------manual testing---------------
+
+1.To check the help message using --help command
+
+python .\word_count.py --help
+
+   usage: word_count.py [-h] [--sentence SENTENCE]
+
+count of words in sentence
+
+options:
+  -h, --help           show this help message and exit
+  --sentence SENTENCE  Enter a sentence
+
+2.To check by using senetence without quatations
+
+ python .\word_count.py --sentence python is high level programming language
+ usage: word_count.py [-h] [--sentence SENTENCE]
+ word_count.py: error: unrecognized arguments: is high level programming language
+
+3.To check possitive scenario by passing sentence
+
+
+ python .\word_count.py --sentence "python is high level programming language"
+word: python
+word: is
+word: high
+word: level
+word: programming
+word: language
+total words: 6
+
+4.To check by without passing any sentence
+
+ python .\word_count.py --sentence
+usage: word_count.py [-h] [--sentence SENTENCE]
+word_count.py: error: argument --sentence: expected one argument
+
+5.To check by passing numbers in place of sentence
+
+ python .\word_count.py --sentence "12 122 122 1222 12 122 122 12"
+word: 12
+word: 122
+word: 122
+word: 1222
+word: 12
+word: 122
+word: 122
+word: 12
+total words: 8

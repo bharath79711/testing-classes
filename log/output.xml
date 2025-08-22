@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.10.11 on win32)" generated="2025-08-21T16:02:41.484283" rpa="false" schemaversion="5">
+<suite id="s1" name="Calculator" source="C:\PycharmProjects\bharath\testing-classes\tests\robot\calculator.robot">
+<test id="s1-t1" name="To check the help message using --h command" line="26">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-08-21T16:02:41.556046" level="INFO">Running command 'python C:/PycharmProjects/bharath/testing-classes/calculator.py --h 2&gt;&amp;1'.</msg>
+<msg time="2025-08-21T16:02:41.728710" level="INFO">${result} = usage: calculator.py [-h] [--operation {add,subtract,multiply,divide}]
+                     num1 num2
+
+Simple command-line calculator
+
+positional arguments:
+  num1                  First number
+  num2...</msg>
+<var>${result}</var>
+<arg>${command} --h</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-08-21T16:02:41.543056" elapsed="0.185654"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>usage: calculator.py [-h] [--operation {add,subtract,multiply,divide}]</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-21T16:02:41.730738" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>Simple command-line calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-21T16:02:41.730738" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>num1</arg>
+<arg>First number</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-21T16:02:41.730738" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>num2</arg>
+<arg>Second number</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-21T16:02:41.733788" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>-h, --help</arg>
+<arg>show this help message and exit</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-21T16:02:41.735236" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>--operation {add,subtract,multiply,divide}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-21T16:02:41.735955" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>Operation to perform (default: add)</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-21T16:02:41.735955" elapsed="0.001040"/>
+</kw>
+<doc>To check the help related commands in console</doc>
+<tag>calculations</tag>
+<status status="PASS" start="2025-08-21T16:02:41.532413" elapsed="0.204582"/>
+</test>
+<status status="PASS" start="2025-08-21T16:02:41.484283" elapsed="0.252712"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">calculations</stat>
+</tag>
+<suite>
+<stat name="Calculator" id="s1" pass="1" fail="0" skip="0">Calculator</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
