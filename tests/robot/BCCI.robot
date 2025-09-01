@@ -31,7 +31,6 @@ ${URL2}    https://www.bcci.tv/international/men/fixtures-results
      Page Should Contain Element    xpath=//*[@id="imw-international-men"]/a[7]
      Page Should Contain Element    xpath=//*[@id="imw-international-men"]/a[8]
 
-
 3.Validate Hero Banner And Featured videos
       Open Browser   ${URL}  ${BROWSER}
       Maximize Browser Window
