@@ -215,7 +215,7 @@ for i in range(len(chars)):
     result="".join(chars)
 print(result)
 
-#rev=letters[::-1]
+ #rev=letters[::-1]
 #print(rev)
 
 """
@@ -253,6 +253,7 @@ def freq_char(strr):
     return freq
 print(freq_char(x))
 """
+"""
 x="Engineering"
 def vowel_count(strr):
     result=""
@@ -267,6 +268,114 @@ def vowel_count(strr):
     return result
 print(vowel_count(x))
 
+"""
+"""
+list_num=[5,3,8,3,1,5,9,1]
+
+uniq_num =[]#[5,3,8,1,9]   1,3,8,5,9  1 3 5 8 9
+
+for num in list_num:
+    if num not in uniq_num:
+        uniq_num.append(num)
+
+print("uniq_nums:",uniq_num)
+# x=len(uniq_num)
+# print(x)
 
 
+for i in range (len(uniq_num)):
+    for j in range (i+1,len(uniq_num)):
+        if uniq_num[i] > uniq_num[j]:
+            uniq_num[i],uniq_num[j] = uniq_num[j],uniq_num[i]
+print(uniq_num)
 
+"""
+"""
+s="abc@tu$xyz"
+
+chars=list(s)
+
+letters=[char for char in chars if char.isalpha()]
+letters.reverse()
+print(letters)
+
+j=0
+for i in range(len(chars)):
+    if chars[i].isalpha():
+        chars[i]=letters[j]
+        j=j+1
+        result="".join(chars)
+print(result)
+"""
+"""
+N=153
+#-------- 1 method-------------------
+
+x=[int(i)for i in str(N)]
+power=len(x)
+results=0
+
+for i in x:
+    results=results+i**power
+if results==N:
+    print("This is Armstrong Number")
+else:
+    print("This is Not Armstrong Number")
+    
+"""
+# 2.method-------------------------
+"""
+N=153
+temp=N
+N2=str(N)
+power=len(N2)
+
+sum =0
+while temp>0:
+    digit=temp%10
+    sum=sum+digit**power
+    temp=temp//10
+if sum==N:
+    print("This is Armstrong Number")
+else:
+    print("This is Not Armstrong Number")
+"""
+"""
+N=123456
+
+result=0
+
+while N>0:
+    digit=N%10
+    result=result*10+digit
+    N=N//10
+print(result)
+
+"""
+
+"""
+def two_num_sum(nums,target):
+    for i in range (len(nums)):
+        for j in range (i+1,len(nums)):
+            if nums[i]+nums[j] == target:
+                return [i,j]
+
+nums= [5,6,7,8,2,1,4]
+target=3
+print("index of two numbers:",two_num_sum(nums,target))
+
+"""
+# ==============2.prime number find out ?==============
+N = int(input("Enter a number:"))
+
+if N > 1:
+    for i in range(2, N):
+        if N % i == 0:
+            print(f"{N}:is not a prime number")
+            break
+    else:
+        print(f"{N}:is a prime number")
+
+
+else:
+    print(f"{N}:is  not a prime number")
