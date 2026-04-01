@@ -308,7 +308,7 @@ for i in range(len(chars)):
 print(result)
 """
 """
-N=153
+N=370
 #-------- 1 method-------------------
 
 x=[int(i)for i in str(N)]
@@ -321,11 +321,11 @@ if results==N:
     print("This is Armstrong Number")
 else:
     print("This is Not Armstrong Number")
-    
 """
 # 2.method-------------------------
 """
-N=153
+N=(int
+   (input("Enter a number:")))
 temp=N
 N2=str(N)
 power=len(N2)
@@ -335,7 +335,7 @@ while temp>0:
     digit=temp%10
     sum=sum+digit**power
     temp=temp//10
-if sum==N:
+if sum==N:                                           
     print("This is Armstrong Number")
 else:
     print("This is Not Armstrong Number")
@@ -365,6 +365,7 @@ target=3
 print("index of two numbers:",two_num_sum(nums,target))
 
 """
+"""
 # ==============2.prime number find out ?==============
 N = int(input("Enter a number:"))
 
@@ -379,3 +380,307 @@ if N > 1:
 
 else:
     print(f"{N}:is  not a prime number")
+ """
+"""
+sentence="Hcl Tech in Bangalore"
+#x=sentence.split()
+#print(x)
+rev =""
+for word in sentence.split():
+    rev=word+" "+rev
+print(rev)
+"""
+# Input: l1 = [2,4,3], l2 = [5,6,4]
+# Output: [7,0,8]
+
+"""
+arr=[16,17,4,3,5,2]
+leaders=[]
+
+max_val=arr[-1]
+leaders.append(max_val)
+
+for i in range(len(arr)-2,-1,-1):
+    if arr[i] > max_val:
+        leaders.append(arr[i])
+        max_val=arr[i]
+        leaders.reverse()
+print(leaders)
+print(leaders[::-1])
+
+"""
+"""
+def find_leaders(arr):
+    leaders = []
+    
+    for i in range(len(arr)):
+        is_leader = True
+        
+        for j in range(i+1, len(arr)):
+            if arr[j] > arr[i]:
+                is_leader = False
+                break
+        
+        if is_leader:
+            leaders.append(arr[i])
+     
+    return leaders
+
+
+arr = [16,17,4,3,5,2]
+print(find_leaders(arr))
+"""
+"""
+num=int(input("Enter a number:"))
+count=0
+
+if num>1:
+
+    for i in range(1,num+1):
+        if num % i == 0:
+            count = count + 1
+    if count==2:
+        print(f"{num} is prime")
+
+    else:
+        print(f"{num} is not prime")
+
+"""
+"""
+#num=int(input("Enter a number:"))
+def fact(num):
+    fact=1
+    if num<0:
+        return "factorial does not exist for negative numbers"
+    elif num==0:
+        return 1
+    else:
+        for i in range(1,num+1):
+            fact = fact * i
+    return f"{num} factorial is: {fact}"
+print(fact(5))
+
+"""
+"""
+arr=[2,15,6,8,12,22,1]
+
+max=arr[0]
+min=arr[0]
+n=len(arr)
+
+for i in range(1,n):
+    if arr[i]>max:
+        max=arr[i]
+
+    elif arr[i]<min:
+        min=arr[i]
+
+print(max)
+print(min)
+
+"""
+"""
+my_list=[23,65,19,90]
+
+print(my_list)
+pos1,pos2=1,3
+my_list[pos1],my_list[pos2]=my_list[pos2],my_list[pos1]
+
+print(my_list)
+"""
+"""
+my_list=[2,15,65,19,90]
+print(my_list)
+my_list[1],my_list[3]=my_list[3],my_list[1]
+
+print(my_list)
+"""
+
+"""
+
+add=(lambda x,y:(x**2,y**2))(2,4)
+print(add)
+
+"""
+"""
+def my_Decrator(func):
+    def wrapper():
+        print("Before Decorator")
+        func()
+        print("After Decorator")
+    return wrapper
+
+@my_Decrator
+def greet():
+    print("Hello Bharath")
+
+greet()
+
+
+
+try:
+    num1 = int(input("Enter number: "))
+    num2 = int(input("Enter number: "))
+    result = num1 / num2
+    print("Result:", result)
+
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+
+except Exception as error:
+    print("error:", error)
+
+else:
+    print("Calculation successful!")
+
+finally:
+    print("Execution completed.")
+"""
+"""
+
+lst=[1,[2,[3,4,[5,6],7,8],9],10]
+
+
+flat=[]
+
+for item in lst:
+    if type(item) is list:
+        for num in item:
+            if type(num) is list:
+                for i in num:
+                    if type(i) is list:
+                        flat.extend(i)
+
+                    else:
+                        flat.append(i)
+            else:
+                flat.append(num)
+    else:
+        flat.append(item)
+
+
+print(flat)
+
+"""
+
+"""
+lst=[1,(2,(3,4,(5,6),7,8),9),10,12,(13,14,15),16]
+
+flat=[]
+
+def flatten(lst):
+    for item in lst:
+        if isinstance(item, tuple):
+            flatten(item)
+        else:
+            flat.append(item)
+
+flatten(lst)
+print(flat)
+
+"""
+"""
+
+lst=[1,2,3,[4,5,6],7,8]
+
+flat=[]
+
+
+def flatten(lst):
+    for item in lst:
+        if isinstance(item, list):
+            flatten(item)
+
+        else:
+            flat.append(item)
+    return flatten
+
+print(flatten(lst))
+"""
+
+"""
+lst = [1,[2,3,[4,5],6,7],8]
+
+
+def itterate_nums(lst):
+    for item in lst:
+        if isinstance(item, list):
+            itterate_nums(item)
+        else:
+            print(item)
+
+
+itterate_nums(lst)
+
+for num in range(100, 201):
+    if str(num) == str(num)[::-1]:
+        print(num)
+
+"""
+"""
+for num in range (1,1001):
+    order=len(str(num))
+    temp=num
+    total =0
+
+    while temp >0:
+        digit=temp%10
+
+        total=total+digit**order
+        temp=temp//10
+
+    if num == total:
+        print(num)
+"""
+lst = [1, 2, 3, 6, 7, 9]
+
+lst = [0 if x == 6 else x for x in lst]
+
+print(lst)
+
+
+lst = [1, 2, 3, 6, 7, 9]
+
+for i in range(len(lst)):
+    if lst[i] == 6:
+        lst[i] = 0
+
+print(lst)
+
+import re
+emails = ["abc@gmail.com", "test@yahoo.com", "hello@gmail.com", "user@outlook.com"]
+
+gmails=[]
+
+
+for mail in emails:
+    if re.fullmatch(r"[\w\.-]+@gmail\.com",mail):
+       gmails.append(mail)
+print(gmails)
+
+
+def safe_divide():
+    try:
+        a = int(input("Enter numerator: "))
+        b = int(input("Enter denominator: "))
+        result = a / b
+    except ValueError:
+        print("Invalid input! Please enter integers only.")
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero.")
+    else:
+        print(f"Result = {result}")
+    finally:
+        print("Operation completed.")
+
+
+safe_divide()
+
+import pandas as pd
+
+
+def test_read_excel():
+    df = pd.read_excel(r"C:\Users\Bharath\Downloads\data.xlsx")
+
+    for i, row in df.iterrows():
+        print(row["Name"], row["Age"])
