@@ -675,6 +675,27 @@ def safe_divide():
 
 
 safe_divide()
+#=======================================================================================================================
+pip install pandas openpyxl
+
+import pandas as pd
+
+# read excel file
+df = pd.read_excel(r"C:\Users\Bharath\Downloads\data.xlsx")
+
+# print full data
+print(df)
+
+df = pd.read_excel(r"C:\Users\Bharath\Downloads\data.xlsx", sheet_name="Sheet1")
+print(df)
+
+
+print(df["Name"])   # column name
+
+
+for index, row in df.iterrows():
+    print(row["Name"], row["Age"])
+
 
 import pandas as pd
 
